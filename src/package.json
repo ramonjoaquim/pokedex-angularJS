@@ -1,0 +1,28 @@
+{
+  "name": "pokedex-angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonjoaquim/pokedex-angularJS.git"
+  },
+  "author": "Ramon Limas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramonjoaquim/pokedex-angularJS/issues"
+  },
+  "homepage": "https://github.com/ramonjoaquim/pokedex-angularJS#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1"
+  },
+  "dependencies": {
+    "angular": "^1.8.0"
+  }
+}
