@@ -50,7 +50,7 @@ function serve() {
 
   watch('app/**/*.js', series(cleanDeploymentFolder, build)).on('change', sync.reload);
   watch('app/**/*.css', series(cleanDeploymentFolder, build)).on('change', sync.reload);
-  watch('assets/libs/css/*.css', series(cleanDeploymentFolder, build)).on('change', sync.reload);
+  watch('assets/css/*.css', series(cleanDeploymentFolder, build)).on('change', sync.reload);
   watch('app/**/*.html', series(cleanDeploymentFolder, build)).on('change', sync.reload);
   watch('index.html', series(cleanDeploymentFolder, build)).on('change', sync.reload);
 };

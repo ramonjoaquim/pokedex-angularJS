@@ -6,7 +6,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider){
         .state('home',{
             name: 'home',
             url:'home',
-            templateUrl: 'components/home/home-view.html'
+            templateUrl: '_components/home/home-view.html'
         });     
 });
 

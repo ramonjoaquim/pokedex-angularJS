@@ -1,7 +1,7 @@
 angular.module('main').directive('navbar', function(){
     return {
         restrict: 'E',
-        templateUrl: 'shared/navbar/navbar-view.html'
+        templateUrl: '_shared/navbar/navbar-view.html'
     }
 
 });

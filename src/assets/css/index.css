@@ -1,9 +1,24 @@
+body{
+    font-family: 'Fredoka One', cursive !important;
+}
+
 footer{
-    background-color: #6ec6ff;
+    background-color: #386abb;
     color: whitesmoke;
 }
 
 nav{
-    background-color: #6ec6ff !important;
-    color: #ffff72;
+    background-color: #386abb !important;
+}
+
+.navbar-brand{    
+    color: #ffca37;
+}
+
+.nav-link {
+    color: #ffca37;
+}
+
+a:after{
+    color: #555509;
 }

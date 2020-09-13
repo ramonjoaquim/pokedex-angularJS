@@ -1,6 +1,6 @@
 angular.module('main').directive('myfooter', function(){
     return {
         restrict: 'E',
-        templateUrl: 'shared/footer/footer-view.html'
+        templateUrl: '_shared/footer/footer-view.html'
     };
 });
