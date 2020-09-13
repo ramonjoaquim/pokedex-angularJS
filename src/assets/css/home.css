@@ -58,3 +58,38 @@ div > img{
     
 }
 
+
+.card {
+    margin-top: 6%;
+    width: 350px;
+    border-radius: 50px;
+    background: #eeeeee;
+    box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff;
+    border: none
+}
+
+.border-circle{
+    border: 2px solid #386abb;
+}
+
+.neo-button {
+    width: 20px;
+    height: 20px;
+    outline: 0 !important;
+    cursor: pointer;
+    color: #ffca37;
+    font-size: 15px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #386abb, #3a3b3b);
+    box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff
+}
+
+.neo-button:active {
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);
+    box-shadow: inset 20px 20px 60px #cacaca, inset -20px -20px 60px #ffffff
+}
+
+

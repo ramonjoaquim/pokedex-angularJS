@@ -1,23 +1,50 @@
-<div ng-controller="home-controller">
+<div ng-controller="homeController">
     <main role="main" class="container">
         <br><br>
         <center>
-            <h2 class="mt-5 text-poke">Procure pelo seu pokémon</h2>
-            <p class="lead text-secondary">Utilizamos a API <a href="https://pokeapi.co/" target="_blank">POKÉAPI</a></p>
+            <h2 class="mt-5 text-poke">Find your pokémon</h2>
+            <p class="lead text-secondary">We use the API <a href="https://pokeapi.co/" target="_blank">POKÉAPI</a>
+            </p>
         </center>
         <br><br>
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <div class="searchbar">
-                    <input class="search_input" type="text" name="" placeholder="Procurar...">
-                    <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    <input class="search_input" ng-model="searchPokemon" id="searchPokemon" type="text" name="" placeholder="Search...">
+                    <button ng-click="findPokemon()" class="search_icon"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
-        <center>
+
+        <div class="container d-flex justify-content-center">
+            <div class="card p-3 py-4">
+                <div class="text-center">
+                    <img src='{{imagePokemon}}' width="100" class="rounded-circle border-circle">
+                    <h3 class="mt-2 text-poke">{{name}}</h3>
+                    <span class="mt-1 clearfix text-primary">Nº: {{identifier}}</span>
+                    <span class="mt-1 clearfix text-primary">Type: {{type}}</span>
+                    <small class="mt-4">{{description}}</small>                    
+                    <h4 class="mt-4 text-poke">Abilities</h4>            
+                </div>
+                <div class="table-responsive table-info">
+                    <table class="table text-primary">
+                        <tr ng-repeat="ability in abilities">
+                            <td>
+                                <div class="social-buttons"> 
+                                    <button class="neo-button"></button>
+                                </div>
+                            </td>
+                            <td>{{ability}}</td>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        <!-- <center>
             <div class="pokemon-walking-border">
                 <img class="pokemon-walking" src="img/pokemon-walking.gif" alt="">
             </div>
-        </center>
+        </center> -->
     </main>
 </div>
