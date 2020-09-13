@@ -6,15 +6,25 @@ const sync = require("browser-sync").create();
 const deploymentFolder = 'dist';
 
 function js() {
-  return src(['node_modules/angular/*.js', '!node_modules/angular/angular.min.js', '!node_modules/angular/index.js', 'app/**/*.js'])
+  return src(['node_modules/angular/*.js', 'node_modules/@uirouter/angularjs/release/angular-ui-router.js', 'node_modules/angular-resource/angular-resource.js', '!node_modules/angular/angular.min.js', '!node_modules/angular/index.js', 'app/**/*.js'])
     .pipe(concat('lib.js'))
     .pipe(dest(`${deploymentFolder}/js`));
 };
+
+function views(){
+  return src(['app/**/*.html'])
+    .pipe(dest(deploymentFolder));
+}
 
 function css() {
   return src(['app/**/*.css', 'assets/css/*.css', 'assets/libs/bootstrap/css/bootstrap.min.css'])
     .pipe(concat('styles.css'))
     .pipe(dest(`${deploymentFolder}/css`));
+};
+
+function images() {
+  return src([ 'assets/img/**/*.{gif,jpg,png,svg,ico}'])
+    .pipe(dest(`${deploymentFolder}/img`));
 };
 
 function cleanDeploymentFolder(){
@@ -25,6 +35,8 @@ function cleanDeploymentFolder(){
 function build(){
   js();
   css();
+  images();
+  views();
   return src(['index.html'])
     .pipe(dest(deploymentFolder));
 };
