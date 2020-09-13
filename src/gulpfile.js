@@ -1,4 +1,4 @@
-const { src, dest, watch, series, parallel } = require("gulp");
+const { src, dest, watch, series, parallel, task } = require("gulp");
 const clean = require("gulp-clean");
 const concat = require("gulp-concat");
 const sync = require("browser-sync").create();
@@ -12,7 +12,7 @@ function js() {
 };
 
 function views(){
-  return src(['app/**/*.html'])
+  return src(['app/**/*.html', 'index.html'])
     .pipe(dest(deploymentFolder));
 }
 
@@ -27,18 +27,11 @@ function images() {
     .pipe(dest(`${deploymentFolder}/img`));
 };
 
+task('build', parallel(js, css, images, views));
+
 function cleanDeploymentFolder(){
   return src(deploymentFolder, {read:false, allowEmpty:true})
     .pipe(clean());
-};
-
-function build(){
-  js();
-  css();
-  images();
-  views();
-  return src(['index.html'])
-    .pipe(dest(deploymentFolder));
 };
 
 function serve() {
@@ -57,8 +50,9 @@ function serve() {
 
 exports.js = js;
 exports.css = css;
-exports.build = build;
 exports.serve = serve;
 exports.clean = cleanDeploymentFolder;
+exports.build = parallel(js, css, images, views);
+const build = task('build');
 //default
 exports.default = series(build, serve);

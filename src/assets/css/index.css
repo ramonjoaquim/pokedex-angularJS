@@ -16,9 +16,37 @@ nav{
 }
 
 .nav-link {
-    color: #ffca37;
+    color: #ffca37!important;
+}
+
+.see-all-button{
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.see-all-button:hover {
+    color: #386abb !important;
+    background-color: #ffca37;
+    border-radius: 30px;
+}    
+
+.see-all-button:active {
+    color:  #386abb;
+    background-color: #ffca37;
+    box-shadow: 0 3px whitesmoke;
+    transform: translateY(2px);
+    border-radius: 30px;
 }
 
 a:after{
     color: #555509;
+}
+
+.pokedex-icon{
+    width: 7%;
+}
+
+.text-poke{
+    color:  #ffca37;
+    -webkit-text-stroke: 2px  #386abb;
 }
